@@ -6,7 +6,7 @@ in Nagoya City, based on real MLIT (Ministry of Land, Infrastructure,
 Transport and Tourism) open data from 2019.
 
 > Given an area, month, day-type (weekday/holiday), and time-of-day
-> (daytime/nighttime), predict the expected stay population — with an
+> (daytime/nighttime), predict the expected stay population with an
 > honest historical range, not a fabricated confidence interval.
 
 Built as a complete, working pipeline: real data → cleaned and stored
