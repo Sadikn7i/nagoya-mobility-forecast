@@ -1,0 +1,38 @@
+# --- Python ---
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.env
+
+# --- Node / Vite frontend ---
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# --- Raw and processed data ---
+# MLIT source data is large and freely re-downloadable from geospatial.jp
+# (see docs/STAGE1_DATA_PIPELINE.md) - no need to commit it.
+data/
+
+# --- Trained models ---
+# Regenerable by running train_models.py - no need to commit large binaries.
+models/
+
+# --- Personal / machine-specific files ---
+# .vscode/settings.json on this machine contains local absolute paths
+# (e.g. C:\Users\dirir\..., personal software install paths) that
+# shouldn't be shared publicly.
+.vscode/
+
+# --- Your own working/draft folder, not part of the deliverable ---
+Documentation_Process/
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Logs ---
+*.log

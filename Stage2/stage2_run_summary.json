@@ -1,0 +1,34 @@
+{
+  "train_rows": 11686,
+  "test_rows": 3895,
+  "features_used": [
+    "lon_center",
+    "lat_center",
+    "distance_to_station_km",
+    "month",
+    "dayflag",
+    "timezone"
+  ],
+  "target": "population",
+  "split": "month <= 9 train, month >= 10 test",
+  "metrics": [
+    {
+      "model": "Baseline (mesh average)",
+      "mae": 1115.2744123798038,
+      "rmse": 3570.162648842547,
+      "r2": 0.8308046578568364
+    },
+    {
+      "model": "Random Forest",
+      "mae": 582.1105378662362,
+      "rmse": 998.1758421499138,
+      "r2": 0.9867740612068159
+    },
+    {
+      "model": "XGBoost",
+      "mae": 645.3025512695312,
+      "rmse": 1062.8663486064463,
+      "r2": 0.985004186630249
+    }
+  ]
+}

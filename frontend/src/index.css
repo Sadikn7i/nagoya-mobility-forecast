@@ -1,0 +1,354 @@
+/* ============================================================
+   GLOBAL FOUNDATION
+   Nagoya Mobility Forecast
+============================================================ */
+
+/* ------------------------------------------------------------
+   UNIVERSAL RESET
+------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------------------
+   DESIGN TOKENS
+------------------------------------------------------------ */
+
+:root {
+  /* Backgrounds */
+
+  --bg-void: #080b10;
+
+  --bg-deep: #0b0f15;
+
+  --bg-panel:
+    rgba(16, 20, 27, 0.88);
+
+  --bg-panel-solid:
+    #10141b;
+
+  --bg-elevated:
+    #151b24;
+
+
+  /* Borders */
+
+  --line:
+    rgba(255, 255, 255, 0.08);
+
+  --line-soft:
+    rgba(255, 255, 255, 0.05);
+
+  --line-bright:
+    rgba(255, 255, 255, 0.16);
+
+
+  /* Text */
+
+  --text-primary:
+    #eaeff5;
+
+  --text-secondary:
+    #c5ced9;
+
+  --text-muted:
+    #7c8798;
+
+  --text-faint:
+    #4a5261;
+
+
+  /* Accent colours */
+
+  --accent-hot:
+    #ff6b4a;
+
+  --accent-mid:
+    #ffb454;
+
+  --accent-cool:
+    #2dd4bf;
+
+  --accent-cool-bright:
+    #5eead4;
+
+
+  /* Typography */
+
+  --font-display:
+    "Space Grotesk",
+    "Inter",
+    system-ui,
+    sans-serif;
+
+  --font-body:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    system-ui,
+    sans-serif;
+
+  --font-mono:
+    "JetBrains Mono",
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+
+  /* Border radius */
+
+  --radius-xs:
+    5px;
+
+  --radius-sm:
+    8px;
+
+  --radius-md:
+    12px;
+
+  --radius-lg:
+    18px;
+
+  --radius-xl:
+    24px;
+
+
+  /* Shadows */
+
+  --shadow-sm:
+    0 4px 16px rgba(0, 0, 0, 0.25);
+
+  --shadow-md:
+    0 12px 40px rgba(0, 0, 0, 0.35);
+
+  --shadow-lg:
+    0 30px 100px rgba(0, 0, 0, 0.55);
+
+  --shadow-accent:
+    0 0 30px rgba(45, 212, 191, 0.18);
+
+
+  /* Animation */
+
+  --ease-out:
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+  --ease-smooth:
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  --transition-fast:
+    160ms var(--ease-out);
+
+  --transition-normal:
+    300ms var(--ease-out);
+
+  --transition-slow:
+    600ms var(--ease-out);
+}
+
+
+/* ------------------------------------------------------------
+   DOCUMENT
+------------------------------------------------------------ */
+
+html {
+  width: 100%;
+  height: 100%;
+
+  background:
+    var(--bg-void);
+
+  color-scheme: dark;
+
+  scroll-behavior: smooth;
+}
+
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 20% 10%,
+      rgba(45, 212, 191, 0.035),
+      transparent 70%
+    ),
+    var(--bg-void);
+
+  color:
+    var(--text-primary);
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    14px;
+
+  line-height:
+    1.5;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+
+  text-rendering:
+    optimizeLegibility;
+}
+
+
+/* ------------------------------------------------------------
+   APPLICATION ROOT
+------------------------------------------------------------ */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* ------------------------------------------------------------
+   FORM ELEMENTS
+------------------------------------------------------------ */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+button {
+  border: none;
+
+  color: inherit;
+
+  background: none;
+
+  cursor: pointer;
+}
+
+
+input,
+textarea,
+select {
+  color: inherit;
+}
+
+
+button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.5;
+}
+
+
+/* ------------------------------------------------------------
+   ACCESSIBILITY
+------------------------------------------------------------ */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline:
+
+    2px solid
+    var(--accent-cool);
+
+  outline-offset:
+    3px;
+}
+
+
+/* ------------------------------------------------------------
+   TEXT SELECTION
+------------------------------------------------------------ */
+
+::selection {
+  color:
+    var(--bg-void);
+
+  background:
+    var(--accent-cool);
+}
+
+
+/* ------------------------------------------------------------
+   SCROLLBARS
+------------------------------------------------------------ */
+
+* {
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    var(--line-bright)
+    transparent;
+}
+
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+
+*::-webkit-scrollbar-track {
+  background:
+    transparent;
+}
+
+
+*::-webkit-scrollbar-thumb {
+  border-radius:
+    999px;
+
+  background:
+    var(--line-bright);
+}
+
+
+*::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(255, 255, 255, 0.25);
+}
+
+
+/* ------------------------------------------------------------
+   REDUCED MOTION
+------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior:
+      auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

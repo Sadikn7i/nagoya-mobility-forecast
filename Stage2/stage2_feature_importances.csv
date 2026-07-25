@@ -1,0 +1,13 @@
+model,feature,importance
+Random Forest,lon_center,0.14659060095253587
+Random Forest,lat_center,0.11449948868848167
+Random Forest,distance_to_station_km,0.604465205276787
+Random Forest,month,0.0032336134885940573
+Random Forest,dayflag,0.003291125296765397
+Random Forest,timezone,0.12791996629683583
+XGBoost,lon_center,0.16983246803283691
+XGBoost,lat_center,0.13549396395683289
+XGBoost,distance_to_station_km,0.4776737093925476
+XGBoost,month,0.001605889410711825
+XGBoost,dayflag,0.008221850730478764
+XGBoost,timezone,0.20717212557792664
