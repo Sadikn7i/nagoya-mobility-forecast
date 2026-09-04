@@ -1,4 +1,3 @@
-# Nagoya Mobility Forecast
 
 
 ![Landing screen](frontend/Easy1.png)
